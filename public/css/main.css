@@ -1,0 +1,15 @@
+.sticky-nav {
+    background-color: white;
+}
+
+.title {
+    padding-top: 10px;
+}
+
+a {
+    color: black;
+}
+
+a:hover {
+    text-decoration: none;
+}
