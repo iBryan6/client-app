@@ -37,7 +37,7 @@ class App extends Component {
 
     /*Fetch Backend data*/
     async componentDidMount() {
-        const tickets = await (await fetch('http://http://192.168.20.113/server-app/paquetes.php')).json()
+        const tickets = await (await fetch('http://192.168.20.113/server-app/paquetes.php')).json()
         this.setState({ tickets })
         const cart = await (await fetch('http://localhost:3004/cart')).json()
         this.setState({ cart })
