@@ -37,18 +37,18 @@ class App extends Component {
 
     /*Fetch Backend data*/
     async componentDidMount() {
-        const tickets = await (await fetch('http://127.0.0.1/serverapp/')).json()
+        const tickets = await (await fetch('http://localhost/serverapp/')).json()
         this.setState({ tickets })
         const cart = await (await fetch('http://localhost:3004/cart')).json()
         this.setState({ cart })
     }
 
     /*Delete from Cart*/
-    DeletefromCart(id, costo) {
+    DeletefromCart(idPaquete, costo) {
         const cart = this.state.cart
         var total = this.state.total
         const filtered = cart.filter(cart => {
-            return cart.id !== id;
+            return cart.idPaquete !== idPaquete;
         })
         this.setState({ cart: filtered })
         // eslint-disable-next-line
@@ -72,7 +72,7 @@ class App extends Component {
             total = parseInt(costo) + total
         }
         else {
-            alert("Ticket is already in your cart")
+            alert("El paquete ya esta en tu carrito")
         }
         this.setState({ cart })
         this.setState({ total })

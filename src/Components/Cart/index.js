@@ -31,13 +31,13 @@ const CartComponent = ({ cart, DeletefromCart, total }) =>
                     </tr>
                 </thead>
                 <tbody>
-                    {cart.map(({ id, nombre, quantity, costo }) =>
-                        <tr key={id} >
+                    {cart.map(({ idPaquete, nombre, quantity, costo }) =>
+                        <tr key={idPaquete} >
                             <td><i className="fas fa-ticket-alt"></i> {nombre} - Concert Ticket</td>
                             <td>{quantity}</td>
                             <td>${costo}</td>
                             <td>${quantity * costo}</td>
-                            <td><button type="button" onClick={() => DeletefromCart(id, costo)} className="btn btn-sm btn-danger">Delete</button></td>
+                            <td><button type="button" onClick={() => DeletefromCart(idPaquete, costo)} className="btn btn-sm btn-danger">Delete</button></td>
                         </tr>
                     )}
                 </tbody>
